@@ -8,7 +8,6 @@ import { AuthService } from '../auth.service';
 export class LocalStrategy extends PassportStrategy(Strategy) {
   constructor(private authService: AuthService) {
     super({
-      secretOrKey: process.env.JWT_SECRET,
       usernameField: 'email',
     });
   }

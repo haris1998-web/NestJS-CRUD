@@ -39,7 +39,7 @@ export class AuthController {
 
   @Get('profile')
   async getProfile(@Request() req: any): Promise<User> {
-    console.log(req.user);
+    console.log({ req });
     return await this.userService.findOneById(req.user.id);
   }
 }

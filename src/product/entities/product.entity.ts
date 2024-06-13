@@ -1,5 +1,4 @@
 import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
-import { UUID } from 'crypto';
 import { Shop } from './shop.entity';
 import { Brand } from './brand.entity';
 import { Category } from './category.entity';
@@ -7,7 +6,7 @@ import { Category } from './category.entity';
 @Entity()
 export class Product {
   @PrimaryGeneratedColumn()
-  id: UUID;
+  id: number;
 
   @Column()
   name: string;

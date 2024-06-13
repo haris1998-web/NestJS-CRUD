@@ -9,6 +9,10 @@ import { AuthModule } from './auth/auth.module';
 import { JwtGuard } from './auth/guards/jwt.guard';
 import { APP_GUARD } from '@nestjs/core';
 import { ProductModule } from './product/product.module';
+import { Brand } from './product/entities/brand.entity';
+import { Shop } from './product/entities/shop.entity';
+import { Category } from './product/entities/category.entity';
+import { Product } from './product/entities/product.entity';
 
 @Module({
   imports: [
@@ -20,7 +24,7 @@ import { ProductModule } from './product/product.module';
       username: 'root',
       password: '1234',
       database: 'takehome',
-      entities: [User],
+      entities: [User, Product, Category, Shop, Brand],
       synchronize: true,
     }),
     UsersModule,

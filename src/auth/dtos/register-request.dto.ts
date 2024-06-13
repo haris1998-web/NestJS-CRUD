@@ -1,5 +1,5 @@
 export type RegisterRequestDto = {
-  id: `${string}-${string}-${string}-${string}-${string}`;
+  id: number;
   firstName: string;
   lastName: string;
   email: string;

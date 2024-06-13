@@ -6,8 +6,6 @@ import { UsersModule } from './users/users.module';
 import { User } from './users/users.entity';
 import { AuthService } from './auth/auth.service';
 import { AuthModule } from './auth/auth.module';
-import { JwtGuard } from './auth/guards/jwt.guard';
-import { APP_GUARD } from '@nestjs/core';
 import { ProductModule } from './product/product.module';
 import { Brand } from './product/entities/brand.entity';
 import { Shop } from './product/entities/shop.entity';
@@ -27,17 +25,11 @@ import { Product } from './product/entities/product.entity';
       entities: [User, Product, Category, Shop, Brand],
       synchronize: true,
     }),
-    UsersModule,
     AuthModule,
+    UsersModule,
     ProductModule,
   ],
   controllers: [],
-  providers: [
-    AuthService,
-    {
-      provide: APP_GUARD,
-      useClass: JwtGuard,
-    },
-  ],
+  providers: [AuthService],
 })
 export class AppModule {}

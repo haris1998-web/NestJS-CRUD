@@ -1,5 +1,6 @@
 import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
 import { UUID } from 'crypto';
+import { IsEmail } from 'class-validator';
 
 @Entity({ name: 'user' })
 export class User {
@@ -7,6 +8,7 @@ export class User {
   id: UUID;
 
   @Column()
+  @IsEmail()
   email: string;
 
   @Column()
